@@ -49,7 +49,7 @@ This project reimagines the existing website experience with:
 - **React.js**
 - **Vite or CRA (choose one)**
 - **React Router (if multi-section navigation is added)**
-- **TailwindCSS / CSS Modules** (choose what you used)
+- **TailwindCSS**
 
 ---
 
