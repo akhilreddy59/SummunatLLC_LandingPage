@@ -13,7 +13,8 @@ This project reimagines the existing website experience with:
 
 ## 🚀 Live Demo
 
-🔗 Deployed Link: <ADD_DEPLOYMENT_URL_HERE>
+🔗 Deployed Link: <https://summunat-llc.vercel.app/>
+🔗 Drive Link: <https://drive.google.com/file/d/1kPrdYlb9k2kTLnv8a3p_I7ZmRv8itshd/view?usp=drive_link>
 
 ---
 
