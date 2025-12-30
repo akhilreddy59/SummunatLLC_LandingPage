@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMMUNAT | Digital Services Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        orange: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                            950: '#431407',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        ::selection {
+            background: #f97316;
+            color: white;
+        }
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .dark .glass-morphism {
+            background: rgba(15, 23, 42, 0.6);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 10px;
+        }
+        /* Smooth image fade-in */
+        img {
+            transition: opacity 0.5s ease-in-out;
+        }
+        img[loading="lazy"] {
+            opacity: 0;
+        }
+        img.loaded {
+            opacity: 1;
+        }
+
+        /* NEW LOADER STYLES */
+        .svg-frame {
+          position: relative;
+          width: 300px;
+          height: 300px;
+          transform-style: preserve-3d;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .svg-frame svg {
+          position: absolute;
+          transition: 0.5s;
+          z-index: calc(1 - (0.2 * var(--j)));
+          transform-origin: center;
+          width: 344px;
+          height: 344px;
+          fill: none;
+        }
+        .svg-frame:hover svg {
+          transform: rotate(10deg) skew(15deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
+        }
+        .svg-frame svg #center {
+          transition: 0.5s;
+          transform-origin: center;
+        }
+        .svg-frame:hover svg #center {
+          transform: rotate(-30deg) translateX(45px) translateY(-3px);
+        }
+        #out2 {
+          animation: rotate16 2s ease-in-out infinite alternate;
+          transform-origin: center;
+          stroke: white;
+        }
+        #out3 {
+          animation: rotate16 2s ease-in infinite normal;
+          transform-origin: center;
+          stroke: #ff0;
+        }
+        #inner3, #inner1 {
+          animation: rotate16 0.5s ease-in-out infinite alternate;
+          transform-origin: center;
+        }
+        #center1 {
+          fill: #ff0;
+          animation: rotate16 0.5s ease-out infinite normal;
+          transform-origin: center;
+        }
+        @keyframes rotate16 {
+          to { transform: rotate(360deg); }
+        }
+
+        /* NEW CARD STYLES */
+        .case-card {
+          width: 100%;
+          height: 420px;
+          background: #1a1a1a;
+          border-radius: 24px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+        }
+        .case-card .img-svg {
+          height: 35%;
+          position: absolute;
+          transition: 0.4s ease-in-out;
+          z-index: 1;
+        }
+        .case-card .textBox {
+          opacity: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          transition: 0.4s ease-in-out;
+          z-index: 2;
+          padding: 20px;
+          text-align: center;
+          transform: translateY(20px);
+        }
+        .case-card .textBox > .text {
+          font-weight: bold;
+        }
+        .case-card .textBox > .head {
+          font-size: 24px;
+          color: #f97316;
+        }
+        .case-card .textBox > .price {
+          font-size: 14px;
+          color: #cbd5e1;
+          line-height: 1.6;
+        }
+        .case-card .textBox > span {
+          font-size: 12px;
+          color: #94a3b8;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+        }
+        .case-card:hover > .textBox {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .case-card:hover > .img-svg {
+          height: 60%;
+          filter: blur(10px);
+          opacity: 0.2;
+          animation: anim 3s infinite;
+        }
+        @keyframes anim {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
+          100% { transform: translateY(0); }
+        }
+        .case-card:hover {
+          transform: scale(1.02) rotate(-1deg);
+          background: #262626;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
+    "@hookform/resolvers/": "https://esm.sh/@hookform/resolvers@^5.2.2/",
+    "yup": "https://esm.sh/yup@^1.7.1",
+    "react-hook-form": "https://esm.sh/react-hook-form@^7.69.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
+    <div id="root"></div>
+    <script>
+        // Simple helper to reveal images after load
+        document.addEventListener('load', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.target.classList.add('loaded');
+            }
+        }, true);
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
